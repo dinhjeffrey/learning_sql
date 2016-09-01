@@ -1,6 +1,3 @@
-SELECT Employee.FirstName, Employee.LastName, count(*) FROM Employee
-JOIN Customer
-ON Customer.SupportRepId = Employee.EmployeeId
-JOIN Invoice
-ON Invoice.CustomerId = Customer.CustomerId -- Why this?
-GROUP BY Employee.EmployeeId
+SELECT Invoice.*, InvoiceLine.InvoiceLineId FROM Invoice
+INNER JOIN InvoiceLine
+ON Invoice.InvoiceId = InvoiceLine.InvoiceId
