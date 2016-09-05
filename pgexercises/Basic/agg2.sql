@@ -6,4 +6,9 @@ WHERE joindate =
 (
   SELECT MAX(joindate)
   FROM cd.members
-)
+);
+
+SELECT firstname, surname, joindate
+FROM cd.members
+ORDER BY joindate DESC
+LIMIT 1;
